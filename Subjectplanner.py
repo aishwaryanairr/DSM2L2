@@ -1,43 +1,77 @@
-# ---- Recipe Explorer ----
+# ================================
+# MY SCHOOL SUBJECT PLANNER
+# ================================
 
-# STEP 1 - Create tuples for recipe details (fixed — cannot be changed)
-pasta = ("Pasta Arrabiata", "Italian", 20, "Medium")
-biryani = ("Chicken Biryani", "Indian", 45, "Hard")
-print("Recipe 1:", pasta)
-print("Name:", pasta[0])
-print("Cuisine:", pasta[1])
-print("Difficulty:", pasta[-1])
+# PART 1 — TUPLES
 
-# STEP 2 - Nested tuples and slicing
-all_recipes = (pasta, biryani)
-print("\nFirst recipe name:", all_recipes[0][0])
-print("Second recipe time:", all_recipes[1][2], "mins")
-print("Pasta details (sliced):", pasta[1:3])
+student_profile = ("Aarav", "Grade 6", "Section A", 6)
 
-# STEP 3 - Iterate through a tuple
-print("\nPasta Recipe details:")
-for detail in pasta:
-    print(" -", detail)
+print("Student Profile:", student_profile)
 
-# STEP 4 - Create sets for ingredients (no duplicates allowed)
-pasta_ingredients = {"tomato", "garlic", "olive oil", "chilli", "pasta", "garlic"}
-biryani_ingredients = {"rice", "chicken", "garlic", "onion", "tomato", "spices"}
-print("\nPasta ingredients:", pasta_ingredients)
-print("Biryani ingredients:", biryani_ingredients)
-print("Total pasta ingredients:", len(pasta_ingredients))
 
-# STEP 5 - Modify the set
-pasta_ingredients.add("parmesan")
-pasta_ingredients.discard("chilli")
-print("\nUpdated pasta ingredients:", pasta_ingredients)
+# PART 2 — ACCESSING TUPLE ELEMENTS
 
-# STEP 6 - Set operations
-all_ingredients = pasta_ingredients.union(biryani_ingredients)
-common = pasta_ingredients.intersection(biryani_ingredients)
-only_pasta = pasta_ingredients.difference(biryani_ingredients)
-unique_to_each = pasta_ingredients.symmetric_difference(biryani_ingredients)
+student_name = student_profile[0]
+grade = student_profile[1]
+section = student_profile[2]
+total_subjects = student_profile[3]
 
-print("\nAll ingredients (union):", all_ingredients)
-print("Common ingredients (intersection):", common)
-print("Only in Pasta (difference):", only_pasta)
-print("Not shared (sym. difference):", unique_to_each)
+print("\nStudent Name:", student_name)
+print("Grade:", grade)
+print("Section:", section)
+print("Total Subjects:", total_subjects)
+
+print("First two details:", student_profile[0:2])
+
+
+# PART 3 — SETS
+
+monday_subjects = {"Math", "Science", "English", "Computer", "Art"}
+tuesday_subjects = {"Math", "History", "English", "Sports", "Music"}
+
+print("\nMonday Subjects:", monday_subjects)
+print("Tuesday Subjects:", tuesday_subjects)
+
+
+# PART 4 — MODIFYING SETS
+
+monday_subjects.add("Library")
+print("\nAfter adding Library to Monday:", monday_subjects)
+
+monday_subjects.discard("Art")
+print("After removing Art from Monday:", monday_subjects)
+
+tuesday_subjects.add("Computer")
+print("After adding Computer to Tuesday:", tuesday_subjects)
+
+tuesday_subjects.discard("Music")
+print("After removing Music from Tuesday:", tuesday_subjects)
+
+
+# PART 5 — SET OPERATIONS
+
+all_subjects = monday_subjects.union(tuesday_subjects)
+common_subjects = monday_subjects.intersection(tuesday_subjects)
+only_monday = monday_subjects.difference(tuesday_subjects)
+only_tuesday = tuesday_subjects.difference(monday_subjects)
+different_subjects = monday_subjects.symmetric_difference(tuesday_subjects)
+
+print("\nAll Subjects:", all_subjects)
+print("Common Subjects:", common_subjects)
+print("Only Monday Subjects:", only_monday)
+print("Only Tuesday Subjects:", only_tuesday)
+print("Different Subjects:", different_subjects)
+
+
+# FINAL SUMMARY
+
+print("\n================================")
+print("SCHOOL SUBJECT PLANNER SUMMARY ")
+print("================================")
+print("Student:", student_name)
+print("Grade:", grade)
+print("Monday Subjects:", monday_subjects)
+print("Tuesday Subjects:", tuesday_subjects)
+print("Subjects on Both Days:", common_subjects)
+print("All Unique Subjects:", all_subjects)
+print("================================")
